@@ -42,7 +42,14 @@ function RouteMap() {
             <div className="map-container">
                 <MapContainer center={centro} zoom={16} className="map">
 
-                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                    <TileLayer 
+                    // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
+                    //   url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                    //   url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+                    // url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
+                    // url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                    url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
+                    />
                     <Polyline positions={ruta} />
                     <AjustarVista ruta={ruta} />
                     {/* 🔴 AQUÍ SE USAN */}
