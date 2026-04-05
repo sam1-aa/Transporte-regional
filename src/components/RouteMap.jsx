@@ -28,10 +28,10 @@ function RouteMap() {
     });
 
     // 🔴 AQUÍ VA unidades
-    const [unidades, setUnidades] = useState([
-        { id: 1, pos: [18.4628, -97.3905] },
-        { id: 2, pos: [ 18.37800597571403, -97.30043649673462] }
-    ]);
+   const [unidades, setUnidades] = useState([
+  { id: 1, pos: [18.4628, -97.3905], nombre: "Unidad 1", ruta: "Centro" },
+  { id: 2, pos: [18.3780, -97.3004], nombre: "Unidad 2", ruta: "Sur" }
+]);
 
     const centro = [18.4616, -97.3925];
 
@@ -48,14 +48,14 @@ function RouteMap() {
                     //   url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                     // url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
                     // url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-                    url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
+                    url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                     />
                     <Polyline positions={ruta} />
                     <AjustarVista ruta={ruta} />
                     {/* 🔴 AQUÍ SE USAN */}
                     {unidades.map((u) => (
-                        <Marker key={u.id} position={u.pos} icon={iconoCamion} >
-                            <Popup>
+                        <Marker key={u.id} position={u.pos} >
+                            <Popup autoOpen>
                                 <strong>{u.nombre}</strong><br />
                                 Ruta: {u.ruta}<br />
                                 ID: {u.id}
