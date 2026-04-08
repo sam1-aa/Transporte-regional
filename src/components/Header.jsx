@@ -1,8 +1,8 @@
 import { IoInvertMode, IoInvertModeOutline } from "react-icons/io5";
 import { useEffect, useState } from 'react'
 
-function Header() {
-    const [tema, setTema] = useState("oscuro");
+function Header({tema, setTema}) {
+    
     useEffect(() => {
         document.body.className = tema;
     }, [tema])
