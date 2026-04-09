@@ -1,6 +1,6 @@
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
 import UnitCard from "./UnitCard";
-function UnitsSection() {
+function UnitsSection( {unidades}) {
     return (
         <section className="units-section">
             <h2 className="section-title">
@@ -8,7 +8,9 @@ function UnitsSection() {
                 Unidades
             </h2>
             <div className="units-grid">
-                <UnitCard/>
+                {unidades.map(unidad=>(
+                    <UnitCard key={unidad.id} unidad={unidad}/>
+                ))}
             </div>
         </section>
     )

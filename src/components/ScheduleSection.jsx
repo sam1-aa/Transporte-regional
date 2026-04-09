@@ -1,6 +1,7 @@
 import { FaRegClock } from "react-icons/fa6";
 import { MdArrowRightAlt } from "react-icons/md";
-function ScheduleSection() {
+import ScheduleItem from "./ScheduleItem";
+function ScheduleSection({ unidades }) {
     return (
         <section className="schedule-section">
             <h2 className="section-title">
@@ -17,46 +18,11 @@ function ScheduleSection() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr >
-                        <td>
-                            <span className="departure-time">9:15</span>
-                        </td>
-                        <td>ALT-01</td>
-                        <td>15 asientos</td>
-                        <td>
-                            <span className="departure-status saliendo">Saliendo</span>
-                        </td>
-                    </tr>
-                    <tr >
-                        <td>
-                            <span className="departure-time">9:25</span>
-                        </td>
-                        <td>ALT-03</td>
-                        <td>13 asientos</td>
-                        <td>
-                            <span className="departure-status proximo">próximo</span>
-                        </td>
-                    </tr>
-                    <tr >
-                        <td>
-                            <span className="departure-time">9:35</span>
-                        </td>
-                        <td>ALT-04</td>
-                        <td>15 asientos</td>
-                        <td>
-                            <span className="departure-status programado">Programado</span>
-                        </td>
-                    </tr>
-                    <tr >
-                        <td>
-                            <span className="departure-time">9:35</span>
-                        </td>
-                        <td>ALT-02</td>
-                        <td>15 asientos</td>
-                        <td>
-                            <span className="departure-status programado">programado</span>
-                        </td>
-                    </tr>
+                    {unidades.map(unidad =>
+                    (
+                        <ScheduleItem key={unidad} unidad={unidad} />
+                    )
+                    )}
                 </tbody>
             </table>
         </section >
